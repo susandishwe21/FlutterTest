@@ -51,14 +51,15 @@ class WelcomeScreen extends StatelessWidget {
           return showExitPopup();
         },
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Image.asset(
               "assets/salve.png",
-              fit: BoxFit.cover,
             ),
             const SizedBox(
-              height: 10,
+              height: 0,
             ),
             Padding(
               padding: const EdgeInsets.only(left: 80),
@@ -95,9 +96,8 @@ class WelcomeScreen extends StatelessWidget {
                 ),
               ),
             ),
-            Spacer(),
             const Padding(
-              padding: EdgeInsets.all(10.0),
+              padding: EdgeInsets.only(top: 10.0),
               child: Text(
                 'Buy groceries with us',
                 style: TextStyle(
@@ -107,7 +107,7 @@ class WelcomeScreen extends StatelessWidget {
             ),
             Spacer(),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.only(top: 8.0),
               child: Container(
                 height: 50,
                 width: MediaQuery.of(context).size.width,
@@ -129,8 +129,8 @@ class WelcomeScreen extends StatelessWidget {
                     FocusScope.of(context).unfocus();
 
                     ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(
-                        backgroundColor: Colors.redAccent,
+                      SnackBar(
+                        backgroundColor: TestColor().primaryColor,
                         duration: Duration(seconds: 2),
                         content: Text("Thanks for choosing us ..."),
                       ),
