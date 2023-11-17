@@ -8,7 +8,7 @@ class WelcomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setEnabledSystemUIOverlays([]);
+    // SystemChrome.setEnabledSystemUIOverlays([]);
     Future<bool> showExitPopup() async {
       return await Get.dialog(
             AlertDialog(
